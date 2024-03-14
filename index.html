@@ -946,25 +946,25 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-9">
-                <form method="post" action="?submitted=true">
+                <form id="contato-form" method="post" action="https://formspree.io/f/xqkrlvkb">
                     <div class="row">
                         <div class="col-md-12 form-group g-mb-30">
-                            <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-3 g-py-13 g-px-15" type="text" placeholder="Nome">
+                            <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-3 g-py-13 g-px-15" required type="text" name="nome" placeholder="Nome">
                         </div>
                         <div class="col-md-6 form-group g-mb-30">
-                            <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-3 g-py-13 g-px-15" type="email" placeholder="E-Mail">
+                            <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-3 g-py-13 g-px-15" required type="email" name="email" placeholder="E-Mail">
                         </div>
                         <div class="col-md-6 form-group g-mb-30">
-                            <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-3 g-py-13 g-px-15" type="tel" placeholder="Telefone">
+                            <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-3 g-py-13 g-px-15" required type="text" name="celular" placeholder="Celular">
                         </div>
                         <div class="col-md-6 form-group g-mb-30">
-                            <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-3 g-py-13 g-px-15" type="cidade" placeholder="Cidade">
+                            <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-3 g-py-13 g-px-15" type="text" name="cidade" placeholder="Cidade">
                         </div>
                         <div class="col-md-6 form-group g-mb-30">
-                            <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-3 g-py-13 g-px-15" type="estado" placeholder="Estado">
+                            <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-3 g-py-13 g-px-15" type="text" name="estado" placeholder="Estado">
                         </div>
                         <div class="col-md-6 form-group g-mb-30">
-                            <select class="custom-select w-100 mr-sm-3 g-mb-0--md g-mb-15">
+                            <select class="custom-select w-100 mr-sm-3 g-mb-0--md g-mb-15" name="contato_por">
                                 <option selected="">Prefere contato por</option>
                                 <option value="whatsapp">Whatsapp</option>
                                 <option value="ligacao">Ligação</option>
@@ -972,7 +972,7 @@
                             </select>
                         </div>
                         <div class="col-md-6 form-group g-mb-30">
-                            <select class="custom-select w-100 mr-sm-3 g-mb-0--md g-mb-15">
+                            <select class="custom-select w-100 mr-sm-3 g-mb-0--md g-mb-15" name="atividade">
                                 <option selected="">Atividade</option>
                                 <option value="mei">MEI</option>
                                 <option value="comercio">Comércio</option>
@@ -981,12 +981,12 @@
                             </select>
                         </div>
                         <div class="col-md-12 form-group g-mb-30">
-                            <textarea class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover g-resize-none rounded-3 g-py-13 g-px-15" rows="7" placeholder="Mensagem"></textarea>
+                            <textarea class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover g-resize-none rounded-3 g-py-13 g-px-15" rows="7" name="mensagem" required placeholder="Mensagem"></textarea>
                         </div>
                     </div>
                     <div class="text-center">
-                        <div class="submitted g-mb-10">Sua mensagem foi enviada com sucesso</div>
-                        <button class="btn u-btn-primary g-font-weight-600 g-font-size-13 text-uppercase g-rounded-25 g-py-15 g-px-30" type="submit">Enviar</button>
+                        <div id="my-form-status" class="g-mb-10"></div>
+                        <button class="btn u-btn-primary g-font-weight-600 g-font-size-13 text-uppercase g-rounded-25 g-py-15 g-px-30" id="my-form-button">Enviar</button>
                     </div>
                 </form>
             </div>
@@ -1075,7 +1075,6 @@
     <!-- End Back to Top -->
 
     <!-- Whatsapp -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css 20"> -->
     <a href="https://wa.me/5545999513059?text=Ola" style="position:fixed;width:60px;height:60px;bottom:40px;left:40px;background-color:#25d366;color:#FFF;border-radius:50px;text-align:center;font-size:30px;box-shadow: 1px 1px 2px #888;
         z-index:1000;" target="_blank">
         <i style="margin-top:16px" class="fa fa-whatsapp"></i>
@@ -1094,5 +1093,56 @@
 <script src="assets/js/gs.init.js"></script>
 <!-- Google Maps -->
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var maskBehavior = function (val) {
+        return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+    },
+    options = {onKeyPress: function(val, e, field, options) {
+        field.mask(maskBehavior.apply({}, arguments), options);
+    }
+    };
+
+    $('input[name=celular]').mask(maskBehavior, options);
+    })
+
+
+    var form = document.getElementById("contato-form");
+    
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "Sua mensagem foi enviada com sucesso!";
+          form.reset()
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+            } else {
+              status.innerHTML = "Oops! Houve um problema ao enviar suas informações"
+            }
+          })
+        }
+      }).catch(error => {
+        status.innerHTML = "Oops! Houve um problema ao enviar suas informações"
+      });
+      return false;
+    }
+    form.addEventListener("submit", handleSubmit)
+</script>
+
 </body>
 </html>
